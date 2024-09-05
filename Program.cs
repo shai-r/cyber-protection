@@ -40,7 +40,8 @@ namespace cyber_protection
                 Thread.Sleep(4000);
 
                 Console.WriteLine("---The system saves the data\n");
-                await WriteToJsonFileAsync("..\\..\\..\\Jsons\\balancedTree.json", tree.GetAllNodesPreOrder());
+                await WriteToJsonFileAsync("..\\..\\..\\Jsons\\balancedTree-node.json", tree.GetAllNodesPreOrder());
+                await WriteToJsonFileAsync("..\\..\\..\\Jsons\\balancedTree-data.json", tree.GetAllNodesPreOrder().Select(n => n.Value));
                 Thread.Sleep(4000);
             }
 
